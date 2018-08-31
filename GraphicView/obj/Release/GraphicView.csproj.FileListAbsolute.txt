@@ -1,0 +1,13 @@
+D:\Программирование\Своё\ExchangeRates\GraphicView\bin\Release\GraphicView.exe.config
+D:\Программирование\Своё\ExchangeRates\GraphicView\bin\Release\GraphicView.exe
+D:\Программирование\Своё\ExchangeRates\GraphicView\bin\Release\GraphicView.pdb
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\MainWindow.baml
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\MainWindow.g.cs
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\App.g.cs
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView_MarkupCompile.cache
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView.g.resources
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView.Properties.Resources.resources
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView.csproj.GenerateResource.Cache
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView.exe
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView.pdb
+D:\Программирование\Своё\ExchangeRates\GraphicView\obj\Release\GraphicView.csprojResolveAssemblyReference.cache

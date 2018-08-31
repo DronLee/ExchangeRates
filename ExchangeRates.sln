@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRates", "ExchangeRates\ExchangeRates.csproj", "{70E6EEA7-47DA-4832-8C8B-153BC511EBD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicView", "GraphicView\GraphicView.csproj", "{1BC094F7-BB88-4DE1-8096-E5F2F899E484}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70E6EEA7-47DA-4832-8C8B-153BC511EBD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70E6EEA7-47DA-4832-8C8B-153BC511EBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70E6EEA7-47DA-4832-8C8B-153BC511EBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70E6EEA7-47DA-4832-8C8B-153BC511EBD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC094F7-BB88-4DE1-8096-E5F2F899E484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC094F7-BB88-4DE1-8096-E5F2F899E484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC094F7-BB88-4DE1-8096-E5F2F899E484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC094F7-BB88-4DE1-8096-E5F2F899E484}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
