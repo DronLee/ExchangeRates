@@ -61,6 +61,7 @@ namespace GraphicView.Model
             get { return rates.Select(r => r.value).ToArray(); }
         }
 
+        internal abstract ExchangeRates LastYear { get; }
         internal abstract ExchangeRates LastMonth { get; }
     }
 }

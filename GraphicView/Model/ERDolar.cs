@@ -10,7 +10,12 @@ namespace GraphicView.Model
 
         protected override string SelectProcedureName
         {
-            get { return "GetLastYearCBDollars"; }
+            get { return "GetLast3YearsCBDollars"; }
+        }
+
+        internal override ExchangeRates LastYear
+        {
+            get { return new ERDolar(rates.Where(r => r.date >= DateTime.Now.AddYears(-1)).ToArray()); }
         }
 
         internal override ExchangeRates LastMonth
