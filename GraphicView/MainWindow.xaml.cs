@@ -51,6 +51,8 @@ namespace GraphicView
             EREuro erEuro = new EREuro();
             DrawGraphic(dolarChart, erDolar, false);
             DrawGraphic(euroChart, erEuro, false);
+            DrawGraphic(lastYearDolarChart, erDolar.LastYear, false);
+            DrawGraphic(lastYearEuroChart, erEuro.LastYear, false);
             DrawGraphic(lastMonthDolarChart, erDolar.LastMonth, true);
             DrawGraphic(lastMonthEuroChart, erEuro.LastMonth, true);
         }

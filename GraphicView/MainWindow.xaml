@@ -7,7 +7,7 @@
         Title="График курса вылют" Height="350" Width="525" Loaded="Window_Loaded_1" WindowState="Maximized">
     <Grid>
         <TabControl>
-            <TabItem Header="За последний год">
+            <TabItem Header="За последние 3 года">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -23,6 +23,26 @@
                         <TextBlock Text="Евро" Margin="20,0,0,0" FontWeight="Bold"/>
                         <WindowsFormsHost>
                             <dvc:Chart x:Name="euroChart" Margin="0,0,0,0"/>
+                        </WindowsFormsHost>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="За последний год">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Text="Доллар" Margin="20,0,0,0" FontWeight="Bold"/>
+                        <WindowsFormsHost>
+                            <dvc:Chart x:Name="lastYearDolarChart" Margin="0,0,0,0"/>
+                        </WindowsFormsHost>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="Евро" Margin="20,0,0,0" FontWeight="Bold"/>
+                        <WindowsFormsHost>
+                            <dvc:Chart x:Name="lastYearEuroChart" Margin="0,0,0,0"/>
                         </WindowsFormsHost>
                     </StackPanel>
                 </Grid>
