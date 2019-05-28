@@ -1,0 +1,14 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/ExchangeRates/bin
+/.vs/ExchangeRates/v16
+/.vs/ExchangeRates/v14
+/ExchangeRates/obj/Release
+/ExchangeRates/obj/Debug
+/GraphicView/bin
+/GraphicView/obj
+/ExchangeRates.v11.suo
+/GraphicView/obj/Debug/TempPE
+/GraphicView/obj/Release/TempPE
