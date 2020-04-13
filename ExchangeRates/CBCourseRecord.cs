@@ -8,30 +8,26 @@ namespace ExchangeRates
 {
     internal class CBCourseRecord
     {
-        private static Regex usdRegex = new Regex(Resources.USDCourseRegex, RegexOptions.Compiled);
-        private static Regex eurRegex = new Regex(Resources.EURCourseRegex, RegexOptions.Compiled);
+        private readonly static Regex usdRegex = new Regex(Resources.USDCourseRegex, RegexOptions.Compiled);
+        private readonly static Regex eurRegex = new Regex(Resources.EURCourseRegex, RegexOptions.Compiled);
 
         public readonly double usa;
         public readonly double ue;
+        private readonly string _dbConnectionString;
 
-        public CBCourseRecord(string html)
+        public CBCourseRecord(string dbConnectionString, string html)
         {
-            Match usdMatch = usdRegex.Match(html);
+            var usdMatch = usdRegex.Match(html);
+            if (!usdMatch.Success)
+                throw new Exception("Запись о доларах на страннице не обнаружена.");
             usa = Convert.ToDouble(usdMatch.Value);
-            Match ueMatch = eurRegex.Match(html);
-            ue = Convert.ToDouble(ueMatch.Value);
-        }
 
-        private string ConnectionString
-        {
-            get
-            {
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = @"UX32L\SQLEXPRESS";
-                builder.InitialCatalog = "ExchangeRates";
-                builder.IntegratedSecurity = true;
-                return builder.ConnectionString;
-            }
+            var ueMatch = eurRegex.Match(html);
+            if (!ueMatch.Success)
+                throw new Exception("Запись о евро на страннице не обнаружена.");
+            ue = Convert.ToDouble(ueMatch.Value);
+
+            _dbConnectionString = dbConnectionString;
         }
 
         private bool ExistsInDB(SqlConnection openConnecion, DateTime date)
@@ -45,7 +41,7 @@ namespace ExchangeRates
 
         internal void ToDB()
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(_dbConnectionString))
             {
                 connection.Open();
                 DateTime nowDate = DateTime.Now.Date;
