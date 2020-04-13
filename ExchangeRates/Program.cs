@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+using ExchangeRates.Properties;
 
 namespace ExchangeRates
 {
@@ -18,14 +18,34 @@ namespace ExchangeRates
             }
             else
             {
-                CBCourseRecord cbRecord = new CBCourseRecord(html);
-                cbRecord.ToDB();
+                try
+                {
+                    var cbRecord = new CBCourseRecord(ConnectionString, html);
+                    cbRecord.ToDB();
+                }
+                catch(Exception exc)
+                {
+                    Console.WriteLine(exc.Message);
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        private static string ConnectionString
+        {
+            get
+            {
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = Settings.Default.DBServer;
+                builder.InitialCatalog = Settings.Default.DBName;
+                builder.IntegratedSecurity = true;
+                return builder.ConnectionString;
             }
         }
 
         private static string GetHtml()
         {
-            WebRequest request = WebRequest.Create("http://www.cbr.ru/currency_base/daily.aspx?date_req=" + DateTime.Now.ToString("dd.MM.yyyy"));
+            WebRequest request = WebRequest.Create("https://cbr.ru/currency_base/daily");
             WebResponse response = null;
             try
             {
