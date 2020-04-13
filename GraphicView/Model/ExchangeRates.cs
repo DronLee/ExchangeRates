@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using GraphicView.Properties;
 
 namespace GraphicView.Model
 {
@@ -39,8 +40,8 @@ namespace GraphicView.Model
             get
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = @"UX32L\SQLEXPRESS";
-                builder.InitialCatalog = "ExchangeRates";
+                builder.DataSource = Settings.Default.DBServer;
+                builder.InitialCatalog = Settings.Default.DBName;
                 builder.IntegratedSecurity = true;
                 return builder.ConnectionString;
             }
